@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('img/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 100%;
+    background: url('img/clouds.jpg') no-repeat,
+                url('img/rainy.jpg') no-repeat,
+                url('img/clear.jpg') no-repeat,
+                url('img/snow.jpg') no-repeat,
+                url('img/sunny.jpg') no-repeat,
+                url('img/thunderstrom.jpg') no-repeat,
+                url('img/drizzle.jpg') no-repeat,
+                url('img/mist.jpg') no-repeat,
+                url('img/bg.jpg') no-repeat;
+    background-size: cover;
+    animation: scrollBg 13.5s linear infinite;
+    z-index: -1;
+}
+
+@keyframes scrollBg {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.33%); }
+}
+
+.header h4 {
+    color: #da1e4e;
+    font-weight: 700;
+    font-size: 2.4rem;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.app-main {
+    min-height: 10vh;
+    width: 30vw;
+    padding: 20px;
+    text-align: center;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 15px;
+    background: #c0dfec; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #92fe9d, #c0dfec); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #92fe9d, #c0dfec); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-main > * {
+    margin-bottom: 20px;
+}
+
+.searchInputBox {
+    position: relative;
+    display: flex;
+}
+
+.input-box {
+    width: 100%;
+    background: azure;
+    color: #e4603a;
+    font-weight: 500;
+    border: none;
+    font-size: 1.7rem;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    outline: none;
+    border: none;
+}
+
+#search-button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.weather-body {
+    color: #fff;
+    padding: 20px;
+    line-height: 2rem;
+    border-radius: 10px;
+    background-color: #eff1f3;
+    display: none;
+    background: linear-gradient(to top, #da1e4e, #e4603a);
+    width: 100%;
+}
+
+.location-deatils {
+    font-weight: bold;
+}
+
+.weather-status {
+    padding: 20px;
+}
+
+.temp {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 20px 0px;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.weather {
+    margin-top: 25px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.min-max {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+.day_details {
+    padding: 20px;
+}
+
+.sun-detail,
+.basic {
+    font-size: 1rem;
+}
+
+#weather-icon {
+    color: black;
+}
+
+@media screen and (max-width: 800px) {
+    .app-main {
+        width: 95%;
+        padding: 10px;
+    }
+
+    body {
+        min-height: 100vh;
+    }
+}
